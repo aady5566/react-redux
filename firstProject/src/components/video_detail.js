@@ -3,7 +3,7 @@ import React from 'react'
 class VideoDetial extends React.Component {
   render () {
     const { props: { video } } = this
-    if(!video){
+    if(!video){ /*handling the null props*/
       return <div>Loading...</div>
     }
     const videoId = video.id.videoId
