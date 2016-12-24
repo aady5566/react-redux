@@ -1,9 +1,14 @@
 import React from 'react'
-class SearchBar extends React.Component {
-  constructor(props){ /*initialize the state*/
-    super(props); /*calling the parents stuff (e.g. Component)*/
 
-    this.state={ term: '' } /*initial object with property 'term' , 只有這裡的 state 宣告是用 '=' ，除此之外都是用 this.setState*/}
+class SearchBar extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {term: ''}
+  }
+  onInputChange(term){
+    this.setState({term: term})
+    this.props.onSearchChange(term) //TODO callback function 不太懂為何用這種方式傳回給 App 的 props 給予新的 term 做查找？
+  }
 
   render () {
     return(
@@ -11,7 +16,7 @@ class SearchBar extends React.Component {
         <input
         type="text"
         value={this.state.term}
-        onChange={(event) => this.setState({ term: event.target.value })}
+        onChange={(event) => this.onInputChange(event.target.value)}
         />
         {/*重新set state後會 重新執行 render()*/}
         {/*
