@@ -1,3 +1,4 @@
+// reducer function (state generator)
 export default function(){
   return [
     { title: 'book1' },

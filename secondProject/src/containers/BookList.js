@@ -1,11 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { selectBook } from '../actions/index' /*import an action creator*/
+import { bindActionCreators } from 'redux'
+
 class BookList extends React.Component {
   renderList(){
     return(
       /*recognize props from redux which is obtained by from mapStateToProps*/
-      this.props.books.map(book =>
-        <li key={book.title} className="list-group-item">{book.title}</li>
+      this.props.books.map(book =>{
+        return(
+          <li
+            key={book.title}
+            onClick={()=>this.props.selectBook(book)}
+            className="list-group-item">
+            {book.title}
+          </li>
+        )
+      }
       )
     )
   }
@@ -24,4 +35,10 @@ function mapStateToProps(state){
     books: state.books
   }
 }
-export default connect(mapStateToProps)(BookList); /*merge redux and react*/
+function mapDispatchToProps(dispatch){
+  /*the former 'selectBook' is key and will be return as a prop to the component BookList, the latter is the action creator which is import from action/index.js*/
+  /*when action creator is called, the results will be passed to all of the reducers (dispatch) */
+  return bindActionCreators({ selectBook : selectBook}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookList); /*merge redux and react*/
