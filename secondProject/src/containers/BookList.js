@@ -38,7 +38,7 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
   /*the former 'selectBook' is key and will be return as a prop to the component BookList, the latter is the action creator which is import from action/index.js*/
   /*when action creator is called, the results will be passed to all of the reducers (dispatch) */
-  return bindActionCreators({ selectBook : selectBook}, dispatch)
+  return bindActionCreators({selectBook : selectBook}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList); /*merge redux and react*/
