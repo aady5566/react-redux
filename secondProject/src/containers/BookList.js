@@ -7,6 +7,7 @@ class BookList extends React.Component {
   renderList(){
     return(
       /*recognize props from redux which is obtained by from mapStateToProps*/
+      /*這裡的selectBook是源自於 actions/index.js*/
       this.props.books.map(book =>{
         return(
           <li
