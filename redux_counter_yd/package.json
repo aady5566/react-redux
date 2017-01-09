@@ -1,27 +1,24 @@
 {
-  "name": "secondProject",
+  "name": "myApp",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "enzyme": "^2.7.0",
-    "react-addons-test-utils": "^15.4.2",
-    "react-scripts": "0.8.4"
+    "react-scripts": "0.6.1",
+    "redux-devtools": "^3.3.1",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.2.0"
   },
   "dependencies": {
-    "axios": "^0.15.3",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
     "react-redux": "^5.0.1",
     "redux": "^3.6.0",
-    "redux-promise": "^0.5.3"
+    "redux-devtools-extension": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   }
 }
