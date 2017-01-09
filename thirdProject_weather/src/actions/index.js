@@ -7,8 +7,8 @@ export const FETCH_WEATHER = 'FETCH_WEATHER' //這樣做的原因是讓 action �
 
 export function fetchWeather(city){
   const url = `${ROOT_URL}&q=${city},us`
-  const request = axios.get(url)  /*recieve promise data structure*/
-  console.log("Request receive:",request);
+  const request = axios.get(url)  /*recieve a promise data*/
+  // console.log("Request receive:",request);
   return{
     type: FETCH_WEATHER,
     payload: request /*if detecting as promise structure,

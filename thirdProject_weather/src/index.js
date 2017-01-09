@@ -6,12 +6,12 @@ import ReduxPromise from 'redux-promise'
 
 import App from './App';
 import reducers from './reducers'
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore)
-
+const createDevWithMiddleware = composeWithDevTools(applyMiddleware(ReduxPromise))
+// createStore(reducers, composeWithDevTools(applyMiddleware(ReduxPromise)))
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={createStore(reducers,createDevWithMiddleware)}>
     <App />
   </Provider>,
   document.getElementById('root')
