@@ -7,7 +7,8 @@ class WeatherList extends React.Component {
     const temps = obj.list.map(weather => weather.main.temp)
     const pressures = obj.list.map(weather => weather.main.pressure)
     const humids = obj.list.map(weather => weather.main.humidity)
-
+    const {lon,lat} = obj.city.coord
+    console.log(lon);
     return(
       <tr key={obj.city.id}>
         <td>{obj.city.name}</td>
