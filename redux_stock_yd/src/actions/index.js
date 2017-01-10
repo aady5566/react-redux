@@ -14,7 +14,7 @@ const GOOGLE_url = "https://www.google.com/finance/getprices"
 export const FETCH_DATA = 'FETCH_DATA' //這樣做的原因是讓 action 和 reducer 保持一致，不會有 typo 的可能。
 export function fetchData(stock){
   // const url = `${YAHOO_URL}${stock}/chartdata;type=quote;range=7d/json`
-  const url = `${GOOGLE_url}?q=${stock}&x=TPE&i=14400&p=1d&f=c,v`
+  const url = `${GOOGLE_url}?q=${stock}&x=TPE&i=14400&p=1d&f=d,c,v`
   // i=14400&p=1d&f=d,c,h,l,o,v
   // const url = TPEX_URL
   // const url = `${ROOT_URL}&q=${stock},us`

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import SearchBar from './containers/SearchBar'
-import StockList from './containers/StockList'
+import CardWithList from './containers/CardWithList'
+import "./style/style.css"
 class App extends Component {
   render() {
     return (
@@ -9,7 +10,9 @@ class App extends Component {
         <MuiThemeProvider>
           <SearchBar />
         </MuiThemeProvider>
-        <StockList/>
+        <MuiThemeProvider>
+          <CardWithList />
+        </MuiThemeProvider>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React from 'react'
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -32,14 +32,11 @@ class SearchBar extends React.Component {
   render () {
     return(
       <form onSubmit={this.onSubmitChange} className="input-group">
-        <TextField
-        hintText="例如：8424.TWO/2002"
-        floatingLabelText="輸入股票代碼"
+        <TextField className="text-field"
+        hintText="例如：2885"
+        floatingLabelText="輸入股票代碼並按「ENTER」送出"
         onChange={this.onInputChange}
         />
-        <span className="input-group-btn">
-          <RaisedButton type="submit" label="送出"  />
-        </span>
       </form>
     )
   }
