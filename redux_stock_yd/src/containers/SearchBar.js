@@ -4,7 +4,7 @@ import TextField from 'material-ui/TextField';
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchData, getStockName } from '../actions/index' // ActionCreator
+import { fetchData, getStockName, fetchGoogleLive } from '../actions/index' // ActionCreator
 
 class SearchBar extends React.Component {
   constructor(props){
@@ -27,6 +27,7 @@ class SearchBar extends React.Component {
     //we need to go and fetch data
     this.props.fetchData(this.state.term) //term from onInputChange
     this.props.getStockName(this.state.term)
+    this.props.fetchGoogleLive()
     this.setState({term:''})//reset term to the default value after calling the fetchWeather() from actions
   }
   render () {
@@ -43,6 +44,6 @@ class SearchBar extends React.Component {
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ fetchData, getStockName }, dispatch)
+  return bindActionCreators({ fetchData, getStockName,fetchGoogleLive }, dispatch)
 }
 export default connect(null, mapDispatchToProps)(SearchBar); /*merge redux and react*/

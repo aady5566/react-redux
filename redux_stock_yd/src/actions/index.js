@@ -3,7 +3,7 @@ import axios from 'axios'
 
 
 const GOOGLE_url = "https://www.google.com/finance/getprices"
-
+const GOOGLE_LIVE = "http://finance.google.com/finance/info?q=TPE:2002"
 // const YAHOO_URL = "https://chartapi.finance.yahoo.com/instrument/1.0/"
 
 // const API_KEY = "e021fe635c175bab454c626452fda64a"
@@ -35,5 +35,17 @@ export function getStockName(input){
   return{
     type: GET_STOCKNAME,
     payload: input
+  }
+}
+
+export const FETCH_GOOGLELIVE = 'FETCH_GOOGLELIVE'
+export function fetchGoogleLive(){
+
+  console.log("LIVE",GOOGLE_LIVE);
+  const request = axios.get(GOOGLE_LIVE);
+
+  return{
+    type: FETCH_GOOGLELIVE,
+    payload: request
   }
 }
